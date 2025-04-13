@@ -16,8 +16,9 @@ def crear_columna(filas):
         raise ValueError("La columna 'CH04' no se encuentra en el encabezado.")
     # Obtener la posicion de la columna CH04
     i = encabezado.index("CH04")
-    columna = ["CH04STR"]
-    for fila in filas[1:0]:
+    columna = []
+    columna.append("CH04STR")
+    for fila in filas[1:]:
         if fila[i] == "1":
             columna.append("Hombre")
         elif fila[i] == "2":

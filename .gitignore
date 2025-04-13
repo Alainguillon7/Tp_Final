@@ -5,7 +5,7 @@ usu_hogar_T*.txt
 
 # Ignorar archivos individuales
 usu_individual_T*.txt
-
+dataset_individuos.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
