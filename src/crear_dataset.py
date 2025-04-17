@@ -11,12 +11,14 @@ def crear_dataset_ind(carpeta):
             reader = csv.reader(f, delimiter=";")
             # Leer el encabezado solo una vez
             if encabezado == [None]:
-                encabezado = next(reader)
+                encabezado = next(reader)  # 1er caso, se guarda el encabezado
+            else:
+                next(reader)  # Saltea el encabezado si ya fue guardado
             # Guardar la data en la lista
             lista.extend(list(reader))
     i_año = get_indice(encabezado, "ANO4")
     i_tri = get_indice(encabezado, "TRIMESTRE")
-    list_dataset = sorted(lista[1:], key=lambda x: ((x[i_año]), (x[i_tri])))
+    list_dataset = sorted(lista, key=lambda x: ((x[i_año]), (x[i_tri])))
     path_dataset = Path("..") / "dataset_individuos.txt"
     with open(path_dataset, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=";")
@@ -38,12 +40,14 @@ def crear_dataset_hogar(carpeta):
             reader = csv.reader(f, delimiter=";")
             # Leer el encabezado solo una vez
             if encabezado == [None]:
-                encabezado = next(reader)
+                encabezado = next(reader)  # 1er caso, se guarda el encabezado
+            else:
+                next(reader)  # Saltea el encabezado si ya fue guardado
             # Guardar la data en la lista
             lista.extend(list(reader))
     i_año = get_indice(lista, "ANO4")
     i_tri = get_indice(lista, "TRIMESTRE")
-    list_dataset = sorted(lista[1:], key=lambda x: ((x[i_año]), (x[i_tri])))
+    list_dataset = sorted(lista, key=lambda x: ((x[i_año]), (x[i_tri])))
     path_dataset = Path("..") / "dataset_hogar.txt"
     with open(path_dataset, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=";")
