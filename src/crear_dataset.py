@@ -14,8 +14,9 @@ def crear_dataset_ind(carpeta):
                 encabezado = next(reader)
             # Guardar la data en la lista
             lista.extend(list(reader))
-    i_año = get_indice(lista, "ANO4")
-    list_dataset = sorted(lista[1:], key=lambda x: x[i_año])
+    i_año = get_indice(encabezado, "ANO4")
+    i_tri = get_indice(encabezado, "TRIMESTRE")
+    list_dataset = sorted(lista[1:], key=lambda x: ((x[i_año]), (x[i_tri])))
     path_dataset = Path("..") / "dataset_individuos.txt"
     with open(path_dataset, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=";")
@@ -27,6 +28,7 @@ def crear_dataset_ind(carpeta):
 def crear_dataset_hogar(carpeta):
     import csv
     from pathlib import Path
+    from utils import get_indice
 
     archivos = list(carpeta.glob("usu_hogar_T*.txt"))
     lista = []
@@ -39,8 +41,9 @@ def crear_dataset_hogar(carpeta):
                 encabezado = next(reader)
             # Guardar la data en la lista
             lista.extend(list(reader))
-    i_año = encabezado.index("ANO4")
-    list_dataset = sorted(lista[1:], key=lambda x: x[i_año])
+    i_año = get_indice(lista, "ANO4")
+    i_tri = get_indice(lista, "TRIMESTRE")
+    list_dataset = sorted(lista[1:], key=lambda x: ((x[i_año]), (x[i_tri])))
     path_dataset = Path("..") / "dataset_hogar.txt"
     with open(path_dataset, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=";")

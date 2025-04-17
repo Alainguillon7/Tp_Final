@@ -13,7 +13,7 @@ def crear_columna(filas, columna, columna_nueva, tabla):
     """
     from utils import get_indice
 
-    i = get_indice(filas, columna)
+    i = get_indice(filas[0], columna)
     nueva = []
     nueva.append(columna_nueva)
 
@@ -39,7 +39,7 @@ def traduccion_columna(path_dataset, columna, columna_nueva, tabla):
     if (columna_nueva) not in filas[0]:
         # crear una lista con los datos
         nueva = crear_columna(filas, columna, columna_nueva, tabla)
-        i = get_indice(filas, columna)
+        i = get_indice(filas[0], columna)
 
         for j, fila in enumerate(filas):
             fila.insert(i + 1, nueva[j])

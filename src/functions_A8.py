@@ -15,7 +15,7 @@ def agregar_columna(datos):
 
     encabezado = datos[0]
     encabezado.append("MATERIAL_TECHUMBRE")
-    V4 = get_indice(datos, "V4")
+    V4 = get_indice(encabezado, "V4")
     for row in datos[1:]:
         # me aseguro de que el valor sea un digito
         if row[V4].isdigit():

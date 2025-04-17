@@ -1,11 +1,3 @@
-def getIndices(encabezado, columna):
-    if columna not in encabezado:
-        raise ValueError(f"Alguna de las columnas no se encuentra en el encabezado.")
-    else:
-        i = encabezado.index(columna)
-    return i
-
-
 def imprimir_resultado(registro, actual):
     total = registro[1] + registro[2] + registro[3]
     if total == 0:

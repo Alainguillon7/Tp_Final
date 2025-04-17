@@ -15,7 +15,7 @@ def agregar_columna(datos):
 
     encabezado = datos[0]
     encabezado.append("TIPO_HOGAR")
-    IX_TOT = get_indice(datos, "IX_TOT")
+    IX_TOT = get_indice(encabezado, "IX_TOT")
     for row in datos[1:]:
         # me aseguro de que el valor sea un digito
         if row[IX_TOT].isdigit():

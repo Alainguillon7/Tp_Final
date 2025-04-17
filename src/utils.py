@@ -1,4 +1,4 @@
-def get_indice(filas, columna):
+def get_indice(encabezado, columna):
     """
     Obtiene el indice de la columna deseada en el encabezado del archivo.
 
@@ -9,7 +9,6 @@ def get_indice(filas, columna):
     Retorna:
         el indice de la columna en el encabezado.
     """
-    encabezado = filas[0]
     # Si no existe la columna CH04, se lanza un error
     if columna not in encabezado:
         raise ValueError(f"La columna {columna} no se encuentra en el encabezado.")

@@ -13,8 +13,8 @@ def crear_columna(filas, columna1, columna2, columna_nueva, tabla):
     """
     from utils import get_indice
 
-    i1 = get_indice(filas, columna1)
-    i2 = get_indice(filas, columna2)
+    i1 = get_indice(filas[0], columna1)
+    i2 = get_indice(filas[0], columna2)
     nueva = []
     nueva.append(columna_nueva)
 
