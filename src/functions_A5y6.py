@@ -1,3 +1,6 @@
+from utils import get_indice
+
+
 def crear_columna_doble(filas, columna1, columna2, columna_nueva, tabla, tipo="str"):
     """
     Crea una nueva columna con valores transformados según una tabla dada.
@@ -13,7 +16,6 @@ def crear_columna_doble(filas, columna1, columna2, columna_nueva, tabla, tipo="s
     Retorna:
         Lista con los valores de la nueva columna, incluyendo encabezado.
     """
-    from utils import get_indice
 
     i1 = get_indice(filas[0], columna1)
     i2 = get_indice(filas[0], columna2)

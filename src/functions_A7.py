@@ -1,3 +1,6 @@
+from utils import get_indice
+
+
 def traducir(IX_TOT):
     """convierte el digito en su equivalente en string"""
     if IX_TOT == 1:
@@ -11,7 +14,6 @@ def traducir(IX_TOT):
 
 def agregar_columna(datos):
     """agrega a la lista la columna con sus datos"""
-    from utils import get_indice
 
     encabezado = datos[0]
     encabezado.append("TIPO_HOGAR")

@@ -1,3 +1,7 @@
+from utils import get_indice
+import csv
+
+
 def crear_columna(filas, columna, columna_nueva, tabla):
     """
     Crea una lista con una nueva columna (CH04STR) string con el sexo de un individuo segun la columna asociada (CH04)
@@ -11,7 +15,6 @@ def crear_columna(filas, columna, columna_nueva, tabla):
     Retorna:
         Una lista con la nueva columna, incluyendo encabezado.
     """
-    from utils import get_indice
 
     i = get_indice(filas[0], columna)
     nueva = []
@@ -30,8 +33,6 @@ def traduccion_columna(path_dataset, columna, columna_nueva, tabla):
     """
     Crea una nueva columna en el archivo CSV con la traduccion de los valores de la columna original.
     """
-    import csv
-    from utils import get_indice
 
     with open(path_dataset, "r", encoding="utf-8") as f:
         reader = csv.reader(f, delimiter=";")

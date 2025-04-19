@@ -1,3 +1,6 @@
+from utils import get_indice
+
+
 def convertir(V4):
     """convierte el digito en su equivalente en string"""
     if V4 >= 1 and V4 <= 4:
@@ -11,8 +14,6 @@ def convertir(V4):
 
 def agregar_columna(datos):
     """agrega a la lista la columna con sus datos"""
-    from utils import get_indice
-
     encabezado = datos[0]
     encabezado.append("MATERIAL_TECHUMBRE")
     V4 = get_indice(encabezado, "V4")

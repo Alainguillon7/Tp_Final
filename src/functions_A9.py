@@ -1,3 +1,6 @@
+from utils import get_indice
+
+
 def traducir_2(resultado):
     """convierte el digito en su equivalente en string"""
     if resultado < 1:
@@ -11,7 +14,6 @@ def traducir_2(resultado):
 
 def agregar_columna_2(datos):
     """agrega a la lista la columna con sus datos"""
-    from utils import get_indice
 
     encabezado = datos[0]
     encabezado.append("DENSIDAD_HOGAR")
