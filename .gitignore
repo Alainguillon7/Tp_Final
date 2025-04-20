@@ -2,9 +2,8 @@
 
 # Ignorar archivos del hogar
 usu_hogar_T*.txt
-dataset_hogar.txt
 .~lock.dataset_hogar.txt#
-
+dataset_hogar.txt
 # Ignorar archivos individuales
 usu_individual_T*.txt
 dataset_individuos.txt
