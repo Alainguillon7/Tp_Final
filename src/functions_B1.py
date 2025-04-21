@@ -1,5 +1,5 @@
 def imprimir_resultado(registro, actual):
-    total = registro[1] + registro[2] + registro[3]
+    total = registro["1"] + registro["2"] + registro["3"]
     if total == 0:
         print(
             f"""año: {actual}
@@ -8,7 +8,7 @@ def imprimir_resultado(registro, actual):
     """
         )
     else:
-        leidos = (registro[1] * 100) / total
+        leidos = (registro["1"] * 100) / total
         no_leidos = 100 - leidos
         print(
             f"""año: {actual}
