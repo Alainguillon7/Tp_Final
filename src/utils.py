@@ -1,3 +1,6 @@
+import csv
+
+
 def get_indice(encabezado, columna):
     """
     Obtiene el indice de la columna deseada en el encabezado del archivo.
@@ -63,10 +66,8 @@ def traducir(aglomerado):
     return ags.get(aglomerado, aglomerado)
 
 
-def pedir_aglomerado():
-    ags = get_aglomerados()
-    while True:
-        ag = input("Ingresá un número de aglomerado: ")
-        if ag in ags:
-            return ag
-        print("Número inválido. Intentá de nuevo.")
+def lector(path_dataset):
+    with open(path_dataset, "r", encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter=";")
+        lista = list(reader)
+    return lista

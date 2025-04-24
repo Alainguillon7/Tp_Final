@@ -1,10 +1,10 @@
 from utils import traducir
 
 
-def imprimir_resultado(registro, aglomerado):
+def imprimir_resultado(total, universitario, aglomerado):
     localidad = traducir(aglomerado)
 
-    if registro["total"] == 0:
+    if total == 0:
         print(
             f"""año: {localidad}
     No hay datos disponibles para calcular porcentajes.
@@ -14,7 +14,7 @@ def imprimir_resultado(registro, aglomerado):
     else:
         print(
             f"""Aglomerado: {localidad}
-    Porcentaje de universitarios: {((registro['universitario'] * 100) / registro['total']):.2f} 
+    Porcentaje de extranjeros universitarios: {((universitario * 100) / total):.2f} 
     -------------------------------
     """
         )

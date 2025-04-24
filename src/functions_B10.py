@@ -1,5 +1,14 @@
-from utils import get_indice
+from utils import get_indice, get_aglomerados
 from functions_B7 import traducir
+
+
+def pedir_aglomerado():
+    ags = get_aglomerados()
+    while True:
+        ag = input("Ingresá un número de aglomerado: ")
+        if ag in ags:
+            return ag
+        print("Número inválido. Intentá de nuevo.")
 
 
 def imprimir_resultado(año, tri, datos):
